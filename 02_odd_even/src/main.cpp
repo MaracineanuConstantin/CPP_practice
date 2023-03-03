@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <string>
-using namespace std;
+
 void printOddOrEven(int number)
 {
 	if (number % 2 == 0)
