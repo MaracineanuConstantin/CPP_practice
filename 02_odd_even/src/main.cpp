@@ -1,17 +1,17 @@
-#include <stdio.h>
+//#include <stdio.h>
 
 #include <iostream>
 #include <string>
-
+using namespace std;
 void printOddOrEven(int number)
 {
 	if (number % 2 == 0)
 	{
-		printf("EVEN\n");
+		std::cout << "EVEN" << std::endl;
 	}
 	else
 	{
-		printf("ODD\n");
+		std::cout << "ODD" << std::endl;
 	}
 }
 
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	// Make sure there are some program arguments available.
 	if (argc <= 1)
 	{
-		printf("No program arguments found.\n");
+		std::cout << "No program arguments found." << std::endl;
 	}
 	
 	// TODO(Gusti): i don't know why this doesn't work, but someone please FIX it.
@@ -46,8 +46,9 @@ int main(int argc, char *argv[])
 	//number = argv[1]; // No
 	//should use atoi?
 	// or std::stoi?
-
-	std::cout << argumentAsString << std::endl; // i think this should be removed
+	number = std::stoi(argumentAsString);
+	
+	//std::cout << argumentAsString << std::endl; // i think this should be removed
 
 	// --------------- stop
 
