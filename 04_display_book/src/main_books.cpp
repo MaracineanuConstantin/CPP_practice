@@ -3,7 +3,7 @@
 
 // Define the maximum length for the name to use.
 // Specify the length of characters in the content (Excluding the terminator).
-#define MAX_NAME_LEN 10
+#define MAX_NAME_LEN 15
 #define MAX_TITLE_LEN 50
 
 struct Author
@@ -33,7 +33,13 @@ struct Book
 
 	void addAuthor(Author author)
 	{
+		if (numAuthors > 5)
+		{
+			std::cout << "Nu se pot adauga mai mult de 5 autori." << std::endl;
+			return;
+		}
 		// TODO: add an author to the container authors array.
+		authors[numAuthors] = author;
 		numAuthors++;
 	}
 
@@ -44,7 +50,10 @@ struct Book
 		std::cout << this->title << std::endl;
 
 		// TODO: add all authors
-
+			for (int i = 0; i < numAuthors; i++)
+			{
+				std::cout << authors[i].name << std::endl;
+		}
 	}
 };
 
