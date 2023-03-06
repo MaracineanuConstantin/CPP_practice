@@ -10,19 +10,27 @@ class Matrix
 private:
 	size_t column_count;
 	size_t line_count;
-
-	// TODO: store the data
+	std::vector<std::string> matrix;
+	// TODO: store the data	
 	// hints: you can use std::string, std::vectors + string, char**, vector<vector<char>>, etc
 public:
-	Matrix(size_t numColumnsX, size_t numLinesY)
+	Matrix(size_t numColumnsX, size_t numLinesY): column_count(numColumnsX), line_count(numLinesY)
 		// TODO: add functionality
 	{
 		// TODO: add functionality
+		for (int i = 0; i < line_count; i++)
+		{
+			matrix.push_back("-");
+		}
 	}
 
 	// Set an entire line
 	void setLine(size_t line_number, const std::string& data)
 	{
+		for (size_t i = 0; i < matrix[line_number].size(); i++)
+		{
+			matrix[line_number] = data;
+		}
 	}
 
 	//OPTIONAL
@@ -55,12 +63,24 @@ public:
 	void setCellXY(size_t x, size_t y, char cell_content)
 	{
 		// TODO: add functionality
+		for (size_t i = 0; i < x; i++)
+		{
+			for (size_t j = 0; j < y; j++)
+			{
+				matrix[i][j] = cell_content;
+		}
+		}
 	}
 
 	void print()
 	{
 		// print all lines and columns
 		// TODO: add functionality
+		for (auto print : matrix)
+		{
+			std::cout << print << std::endl;
+		}
+		std::cout << std::endl;
 	}
 };
 
