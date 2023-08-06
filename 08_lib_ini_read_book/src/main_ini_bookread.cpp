@@ -52,7 +52,7 @@ std::vector<Book> readBooksFromIniFile(const std::string& file_name)
 	SI_Error rc = ini.LoadFile(file_name.c_str());
 	if (rc < 0)
 	{
-		std::cerr << "Error: Could not open or parse the INI file." << std::endl;
+		std::cerr << "Error opening file." << std::endl;
 		return results;
 	}
 	
