@@ -46,8 +46,14 @@ int main(int argc, char *argv[])
 	//number = argv[1]; // No
 	//should use atoi?
 	// or std::stoi?
-	number = std::stoi(argumentAsString);
-	
+	try{
+		number = std::stoi(argumentAsString);
+	}
+	catch (const std::invalid_argument& e)
+	{
+		printf("Invalid input.\n");
+		return 1;
+	}
 	//std::cout << argumentAsString << std::endl; // i think this should be removed
 
 	// --------------- stop
